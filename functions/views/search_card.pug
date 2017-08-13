@@ -1,100 +1,45 @@
-.row
-    .col-lg-4
-    .col-lg-4
-        .card
-            .panel.panel-primary
-                .panel-body
-                    table
+for item in data
+    .card
+        .panel.panel-primary
+            .panel-body
+                table
+                    tr
+                        td(width="70px")
+                            b Bus
+                        td #{item.bus_name}
+                    tr
+                        td
+                            b Counter
+                        td #{item.counter}
+                    tr
+                        td
+                            b Route
+                        td #{item.route}
+                    tr
+                        td
+                            b Contact
+                        td #{item.contact}
+                    tr
+                        td
+                            b Booking
+                        td #{item.booking}
+                for bus_type in item.bus_types
+                    if bus_type.type_name == "economy"
+                        span(class="label label-default m1")  #{bus_type.type_name} : #{bus_type.ticket_cost}tk
+                    else if bus_type.type_name == "ac"
+                        span(class="label label-success m1")  #{bus_type.type_name} : #{bus_type.ticket_cost}tk
+                    else
+                        span(class="label label-primary m1")  #{bus_type.type_name} : #{bus_type.ticket_cost}tk
+            .panel-footer
+                table(class="table", style="display: inline-block")
+                    for schedule in item.bus_schedules
                         tr
-                            td(width="70px")
-                                b Bus
-                            td Ajmiri Enterprise
-                        tr
+                            td(width="60px") #{schedule.days}
                             td
-                                b Counter
-                            td Gabtoli
-                        tr
-                            td
-                                b Route
-                            td Dhaka to Faridpur
-                        tr
-                            td
-                                b Contact
-                            td 9548552215
-                    span(class="label label-default sm")  economy : 300tk
-                    //
-                    span(class="label label-success sm")  ac : 400tk
-                    //
-                    span(class="label label-primary sm")  business : 500tk
-                .panel-footer
-                    table(class="table", style="display: inline-block")
-                        tr
-                            td(width="60px") Everyday
-                            td(style="display:inline-block")
-                                span(class="label label-default m1") 5 am
-                                //
-                                span(class="label label-default m1") 6 am
-                                //
-                                span(class="label label-default m1") 6 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-success m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-primary m1") 7 am
-                                //
-                                span(class="label label-primary m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-success m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-primary m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-                                //
-                                span(class="label label-default m1") 7 am
-
-    .col-lg-4
+                                for time in schedule.times
+                                    if time.bus_type == "economy"
+                                        span(class="label label-default m1") #{time.schedule_time}
+                                    else if time.bus_type == "ac"
+                                        span(class="label label-success m1") #{time.schedule_time}
+                                    else
+                                        span(class="label label-primary m1") #{time.schedule_time}
