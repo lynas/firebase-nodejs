@@ -10,6 +10,10 @@ app.get('/', function (req, res) {
     res.render('index', {title: "jogajog"});
 });
 
+app.get('/admin', function (req, res) {
+    res.render('admin', {title: "jogajog"});
+});
+
 app.post('/', function (req, res) {
     res.render('search_card', {
         title: "jogajog", data: [
