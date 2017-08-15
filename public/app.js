@@ -88,6 +88,7 @@
         event.preventDefault();
         counter++;
         $(".bus_schedule").append('<br />' +
+            '<select name="option_bus_schedule_day_' + counter + '"><option>Everyday</option><option>Saturday</option><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option></select>' +
             '<select name="option_bus_schedule_' + counter + '"><option>economy</option><option>ac</option><option>business</option></select>' +
             '<span style="margin-left:10px; margin-right:10px;"><input name="bus_schedule_' + counter + '"></span>' +
             '<select name="option_time_bus_schedule_' + counter + '"><option>am</option><option>pm</option></select>');

@@ -3,8 +3,8 @@ extends layout
 block content
     .container-fluid
         .row
-            .col-lg-4
-            .col-lg-4
+            .col-lg-3
+            .col-lg-5
                 h2 Create new Route
                 form(class="add_new_route_form" name="add_new_route_form")
                     table(class="table")
@@ -63,6 +63,15 @@ block content
                                 button(class="add_bus_schedule") Add Time
                             td
                                 .bus_schedule
+                                    select(name="option_bus_schedule_day_1")
+                                        option Everyday
+                                        option Saturday
+                                        option Sunday
+                                        option Monday
+                                        option Tuesday
+                                        option Wednesday
+                                        option Thursday
+                                        option Friday
                                     select(name="option_bus_schedule_1")
                                         option economy
                                         option ac
