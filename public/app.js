@@ -37,7 +37,7 @@
         });
     });
 
-    $(".new_bus_add").click(function (event) {
+    $(".add_new_route_form").submit(function (event) {
         event.preventDefault();
 
 
@@ -50,8 +50,8 @@
         //     const ss = "bus_type_" + i;
         //     console.log(data[ss]);
         // }
-        console.log(JSON.stringify(data))
-
+        console.log(JSON.stringify(data));
+        return false;
     });
 
     $(".add_bus_schedule").click(function (event) {
