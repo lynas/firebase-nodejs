@@ -97,42 +97,42 @@
             console.log(data[bus_schedule]);
             console.log(data[schedule_meridiem]);
 
-            if (data[schedule_day] == "everyday") {
+            if (data[schedule_day] == "everyday" && data[bus_schedule].trim().length!==0) {
                 every_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
                 });
-            } else if (data[schedule_day] == "saturday") {
+            } else if (data[schedule_day] == "saturday" && data[bus_schedule].trim().length!==0) {
                 saturday_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
                 });
-            } else if (data[schedule_day] == "sunday") {
+            } else if (data[schedule_day] == "sunday" && data[bus_schedule].trim().length!==0) {
                 sunday_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
                 });
-            } else if (data[schedule_day] == "monday") {
+            } else if (data[schedule_day] == "monday" && data[bus_schedule].trim().length!==0) {
                 monday_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
                 });
-            } else if (data[schedule_day] == "tuesday") {
+            } else if (data[schedule_day] == "tuesday" && data[bus_schedule].trim().length!==0) {
                 tuesday_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
                 });
-            } else if (data[schedule_day] == "wednesday") {
+            } else if (data[schedule_day] == "wednesday" && data[bus_schedule].trim().length!==0) {
                 wednesday_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
                 });
-            } else if (data[schedule_day] == "thursday") {
+            } else if (data[schedule_day] == "thursday" && data[bus_schedule].trim().length!==0) {
                 thursday_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
                 });
-            } else if (data[schedule_day] == "friday") {
+            } else if (data[schedule_day] == "friday" && data[bus_schedule].trim().length!==0) {
                 friday_day_time.push({
                     schedule_time: data[bus_schedule] + data[schedule_meridiem],
                     bus_type: data[bus_type]
