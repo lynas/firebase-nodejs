@@ -1,7 +1,7 @@
 (function ($) {
     console.log("test");
     var counter = 1;
-    $( ".mybtn" ).click(function() {
+    $(".mybtn").click(function () {
         $.ajax({
             url: "/",
             type: "POST",
@@ -19,7 +19,7 @@
         });
     });
 
-    $( ".search_transport" ).click(function() {
+    $(".search_transport").click(function () {
         $.ajax({
             url: "/",
             type: "POST",
@@ -50,7 +50,37 @@
         //     const ss = "bus_type_" + i;
         //     console.log(data[ss]);
         // }
+        var input_json = {
+            bus_name: data["bus_name"],
+            counter: data["counter"],
+            from: data["from"],
+            to: data["to"],
+            contact_number: data["contact_number"],
+            booking_number: data["booking_number"],
+            economy_fare: data["economy_fare"]
+        };
+
+        var bus_types = [];
+        bus_types.push({
+            type_name: "economy",
+            ticket_cost: data["economy_fare"]
+        });
+        if (data["ac_fare"] !== "") {
+            bus_types.push({
+                type_name: "ac",
+                ticket_cost: data["ac_fare"]
+            });
+        }
+        if (data["business_fare"] !== "") {
+            bus_types.push({
+                type_name: "business",
+                ticket_cost: data["business_fare"]
+            });
+        }
+        input_json.bus_types = bus_types;
+
         console.log(JSON.stringify(data));
+        console.log(JSON.stringify(input_json));
         return false;
     });
 
@@ -58,8 +88,8 @@
         event.preventDefault();
         counter++;
         $(".bus_schedule").append('<br />' +
-            '<select name="option_bus_schedule_'+counter+'"><option>economy</option><option>ac</option><option>business</option></select>' +
-            '<span style="margin-left:10px; margin-right:10px;"><input name="bus_schedule_'+counter+'"></span>' +
-            '<select name="option_time_bus_schedule_'+counter+'"><option>am</option><option>pm</option></select>');
+            '<select name="option_bus_schedule_' + counter + '"><option>economy</option><option>ac</option><option>business</option></select>' +
+            '<span style="margin-left:10px; margin-right:10px;"><input name="bus_schedule_' + counter + '"></span>' +
+            '<select name="option_time_bus_schedule_' + counter + '"><option>am</option><option>pm</option></select>');
     });
 })(jQuery);
