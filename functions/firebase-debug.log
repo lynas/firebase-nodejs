@@ -1,0 +1,12 @@
+[debug] [2017-08-16T07:14:09.845Z] ----------------------------------------------------------------------
+[debug] [2017-08-16T07:14:09.849Z] Command:       /usr/local/Cellar/node/7.7.4/bin/node /usr/local/bin/firebase serve --only hosting,functions
+[debug] [2017-08-16T07:14:09.849Z] CLI Version:   3.9.2
+[debug] [2017-08-16T07:14:09.849Z] Platform:      darwin
+[debug] [2017-08-16T07:14:09.849Z] Node Version:  v7.7.4
+[debug] [2017-08-16T07:14:09.850Z] Time:          Wed Aug 16 2017 13:14:09 GMT+0600 (+06)
+[debug] [2017-08-16T07:14:09.850Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-16T07:14:09.863Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-16T07:14:09.864Z] > authorizing via signed-in user
+[debug] [2017-08-16T07:14:09.866Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/bus-info-bd  
+ Wed Aug 16 2017 13:14:09 GMT+0600 (+06)

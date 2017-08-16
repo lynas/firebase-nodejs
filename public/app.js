@@ -92,10 +92,6 @@
             const bus_type = "option_bus_type_" + i;
             const bus_schedule = "bus_schedule_" + i;
             const schedule_meridiem = "option_meridiem_" + i;
-            console.log(data[schedule_day]);
-            console.log(data[bus_type]);
-            console.log(data[bus_schedule]);
-            console.log(data[schedule_meridiem]);
 
             if (data[schedule_day] == "everyday" && data[bus_schedule].trim().length!==0) {
                 every_day_time.push({
@@ -200,9 +196,21 @@
         }
         input_json.bus_schedules  = bus_schedules;
         // console.log(JSON.stringify(data));
-        console.log("--------OUT--------")
+        console.log("--------OUT--------");
         console.log(JSON.stringify(input_json));
-        console.log("--------OUTEND--------")
+        console.log("--------OUTEND--------");
+        $.ajax({
+            url: "/secure/add_route",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(input_json),
+            success: function (result) {
+                console.log(JSON.stringify(result));
+            }, error: function (error) {
+                console.log(JSON.stringify(error));
+            }
+
+        });
         return false;
     });
 
